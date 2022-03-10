@@ -38,7 +38,7 @@ public class Policy
          weight = w;
    }
    
-   /*
+   /**
       Calculates the BMI of the policyholder through their weight and height
       
       @return calculated BMI
@@ -48,7 +48,7 @@ public class Policy
       return (weight*703)/(height*height);
    }
    
-   /*
+   /**
       Calculates the price of the insurance depending on age, smokingStatus, and BMI
       
       @return calculated price of the insurance
@@ -74,7 +74,7 @@ public class Policy
    
    //All the Setter methods for each field
    
-   /*
+   /**
       Sets the policyNumber from the given pNumber
       
       @param pNumber - policy number to be changed to
@@ -83,7 +83,7 @@ public class Policy
    {
       policyNumber = pNumber;
    }
-   /*
+   /**
       Sets the providerName from the given pName
       
       @param pName - provider name to be changed to
@@ -92,7 +92,7 @@ public class Policy
    {
       providerName = pName;
    }
-   /*
+   /**
       Sets the firstName from the given fName
       
       @param fName - first name to be changed to
@@ -101,7 +101,7 @@ public class Policy
    {
       firstName = fName;
    }
-   /*
+   /**
       Sets the lastName from the given lName
       
       @param lName - last name to be changed to
@@ -110,7 +110,7 @@ public class Policy
    {
       lastName = lName;
    }
-   /*
+   /**
       Sets the age from the given a
       
       @param a - age to be changed to
@@ -119,7 +119,7 @@ public class Policy
    {
       age = a;
    }
-   /*
+   /**
       Sets the smokingStatus from the given sStatus
       
       @param sStatus - smoking status to be changed to
@@ -128,7 +128,7 @@ public class Policy
    {
       smokingStatus = sStatus;
    }
-   /*
+   /**
       Sets the height from the given h
       
       @param h - height to be changed to
@@ -137,7 +137,7 @@ public class Policy
    {
       height = h;
    }
-   /*
+   /**
       Sets the weight from the given w
       
       @param w - weight to be changed to
@@ -148,7 +148,7 @@ public class Policy
    }
    
    //All the Getter methods for each field
-   /*
+   /**
       Returns the policyNumber
       
       @return policy number
@@ -157,7 +157,7 @@ public class Policy
    {
       return policyNumber;
    }
-   /*
+   /**
       Returns the providerName
       
       @return provider name
@@ -166,7 +166,7 @@ public class Policy
    {
       return providerName;
    }
-   /*
+   /**
       Returns the firstName
       
       @return first name
@@ -175,7 +175,7 @@ public class Policy
    {
       return firstName;
    }
-   /*
+   /**
       Returns the lastName
       
       @return last name
@@ -184,7 +184,7 @@ public class Policy
    {
       return lastName;
    }
-   /*
+   /**
       Returns the age
       
       @return age
@@ -193,7 +193,7 @@ public class Policy
    {
       return age;
    }
-   /*
+   /**
       Returns the smokingStatus
       
       @return smoking status
@@ -202,7 +202,7 @@ public class Policy
    {
       return smokingStatus;
    }
-   /*
+   /**
       Returns the height
       
       @return height
@@ -211,7 +211,7 @@ public class Policy
    {
       return height;
    }
-   /*
+   /**
       Returns the weight
       
       @return weight
