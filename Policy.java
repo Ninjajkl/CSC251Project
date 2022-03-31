@@ -3,6 +3,7 @@ public class Policy
    //Initializing Fields
          private int policyNumber;
          private String providerName;
+         private static int instanceCount = 0;
        
    //No-arg constructor  
    public Policy()
@@ -10,6 +11,7 @@ public class Policy
       //Set default values for fields
          policyNumber = 0;
          providerName = "";
+         instanceCount++;
    }
    
    //Constructor that accepts arguments
@@ -18,6 +20,7 @@ public class Policy
       //Set field values to the given argument values
          policyNumber = pNumber;
          providerName = pName;
+         instanceCount++;
    }
    
    /**
@@ -72,5 +75,14 @@ public class Policy
    public String getProviderName()
    {
       return providerName;
+   }
+   /**
+      Returns the instanceCount
+      
+      @return instance count
+   */
+   public String getInstanceCount()
+   {
+      return instanceCount;
    }
 }
