@@ -66,6 +66,23 @@ public class PolicyHolder
       return price;
    }
    
+   /**
+      Overrides the toString Method
+      
+      @return all fields in a string
+   */
+   public override String toString()
+   {
+      String returnString = "";
+      returnString += "\nFirst Name = " + firstName;
+      returnString += "\nLast Name = " + lastName;
+      returnString += "\nAge = " + age;
+      returnString += "\nSmoking Status = " + smokingStatus;
+      returnString += "\nHeight = " + height;
+      returnString += "\nWeight = " + weight;
+      return returnString
+   }
+   
    //All the Setter methods for each field
    
    /**
