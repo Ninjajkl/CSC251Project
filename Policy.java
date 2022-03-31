@@ -4,6 +4,7 @@ public class Policy
          private int policyNumber;
          private String providerName;
          private static int instanceCount = 0;
+         private PolicyHolder myPolicyHolder;
        
    //No-arg constructor  
    public Policy()
@@ -11,6 +12,7 @@ public class Policy
       //Set default values for fields
          policyNumber = 0;
          providerName = "";
+         myPolicyHolder = new PolicyHolder();
          instanceCount++;
    }
    
@@ -20,6 +22,7 @@ public class Policy
       //Set field values to the given argument values
          policyNumber = pNumber;
          providerName = pName;
+         myPolicyHolder = new PolicyHolder(fName, lName, a, sStatus, h, w);
          instanceCount++;
    }
    
@@ -28,12 +31,13 @@ public class Policy
       
       @return all fields in a string
    */
-   public override String toString()
+   public String toString()
    {
       String returnString = "";
-      returnString += "\nPolicy Number = " + policyNumber;
-      returnString += "\nProvider name = " + providerName;
-      return returnString
+      returnString += "\nPolicy Number: " + policyNumber;
+      returnString += "\nProvider Name: " + providerName;
+      returnString += myPolicyHolder.toString();
+      return returnString;
    }
    
    //All the Setter methods for each field
@@ -55,6 +59,15 @@ public class Policy
    public void setProviderName(String pName)
    {
       providerName = pName;
+   }
+    /**
+      Sets the myPolicyHolder from the given PolicyHolder
+      
+      @param pHolder - PolicyHolder to be changed to
+   */
+   public void setPolicyHolder(PolicyHolder pHolder)
+   {
+      myPolicyHolder = new PolicyHolder(pHolder);
    }
    
    //All the Getter methods for each field
@@ -81,8 +94,17 @@ public class Policy
       
       @return instance count
    */
-   public String getInstanceCount()
+   public static int getInstanceCount()
    {
       return instanceCount;
+   }
+   /**
+      Returns the myPolicyHolder
+      
+      @return myPolicyHolder
+   */
+   public PolicyHolder getPolicyHolder()
+   {
+      return new PolicyHolder(myPolicyHolder);
    }
 }

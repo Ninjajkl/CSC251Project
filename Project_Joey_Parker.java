@@ -8,6 +8,11 @@ public class Project_Joey_Parker
    {
       try
       {
+         //declare variables for the Policy and the PolicyHolder
+         int policyNumber, age;
+         String providerName, firstName, lastName, smokingStatus;
+         double height, weight;
+         
          //Finds the PolicyInformation File and opens it
          File file = new File("PolicyInformation.txt");
          //Creating a Scanner object to read the file
@@ -17,43 +22,41 @@ public class Project_Joey_Parker
          //As long as the file has more lines to read, this while loop repeats
          while(inputFile.hasNext())
          {
-            //creating a Policy Object
-            Policy newPolicy = new Policy();
-            
             //Asks for Policy Number
-            newPolicy.setPolicyNumber(inputFile.nextInt());
+            policyNumber = inputFile.nextInt();
             
             //Needed to prevent skipping after the use of nextInt()
             inputFile.nextLine();
             
             //Asks for Provider Name
-            newPolicy.setProviderName(inputFile.nextLine());
+            providerName = inputFile.nextLine();
             
             //Asks for Policyholder's First Name
-            newPolicy.setFirstName(inputFile.nextLine());
+            firstName = inputFile.nextLine();
             
             //Asks for Policyholder's Last Name
-            newPolicy.setLastName(inputFile.nextLine());
+            lastName = inputFile.nextLine();
             
             //Asks for Policyholder's Age
-            newPolicy.setAge(inputFile.nextInt());
+            age = inputFile.nextInt();
             
             //Needed to prevent skipping after the use of nextInt()
             inputFile.nextLine();
             
             //Asks for Policyholder's Smoking Status
-            newPolicy.setSmokingStatus(inputFile.nextLine());
+            smokingStatus = inputFile.nextLine();
             
             //Asks for Policyholder's Height
-            newPolicy.setHeight(inputFile.nextDouble());
+            height = inputFile.nextDouble();
             
             //Asks for Policyholder's Weight
-            newPolicy.setWeight(inputFile.nextDouble());
+            weight = inputFile.nextDouble();
             
             //Needed to prevent skipping after the use of nextInt()
             inputFile.nextLine();
             
             //Adds the newly created Policy to the policyList ArrayList
+            Policy newPolicy = new Policy(policyNumber, providerName, firstName, lastName, age, smokingStatus, height, weight);
             policyList.add(newPolicy);
          }
          
@@ -65,30 +68,8 @@ public class Project_Joey_Parker
          int numNonSmokers = 0;
          for(int i = 0; i < policyList.size(); i++)
          {
-            //Prints all information of each policy
-            //Prints out Policy Number
-            System.out.println("Policy Number: " + policyList.get(i).getPolicyNumber());
-            //Prints out Provider Name
-            System.out.println("Provider Name: " + policyList.get(i).getProviderName());
-            //Prints out PolicyHolder's First Name
-            System.out.println("PolicyHolder's First Name: " + policyList.get(i).getFirstName());
-            //Prints out PolicyHolder's Last Name
-            System.out.println("PolicyHolder's Last Name: " + policyList.get(i).getLastName());
-            //Prints out PolicyHolder's Age
-            System.out.println("PolicyHolder's Age: " + policyList.get(i).getAge());
-            //Prints out PolicyHolder's Smoking Status
-            System.out.println("nPolicyHolder's Smoking Status (smoker/non-smoker): " + policyList.get(i).getSmokingStatus());
-            //Prints out PolicyHolder's Height
-            System.out.println("PolicyHolder's Height: " + policyList.get(i).getHeight() + " inches");
-            //Prints out PolicyHolder's Weight
-            System.out.println("PolicyHolder's Weight: " + policyList.get(i).getWeight() + " pounds");
-            //Calculates and prints out Policyholder's BMI
-            System.out.printf("PolicyHolder's BMI: %,.2f\n", policyList.get(i).BMICalculator());
-            //Calculates and prints out Policy Price
-            System.out.printf("Policy Price: $%,.2f\n\n", policyList.get(i).calculateInsurancePrice());
-            
-            //Used to find number of smokers/non-smokers
-            if(policyList.get(i).getSmokingStatus().equals("smoker"))
+            System.out.println(policyList.get(i));
+            if(policyList.get(i).getPolicyHolder().getSmokingStatus().equals("smoker"))
             {
                numSmokers++;
             }
@@ -98,6 +79,7 @@ public class Project_Joey_Parker
             }
          }
          
+         System.out.println("There were " + Policy.getInstanceCount() + " Policy objects created.");
          //Prints out number of Smokers/Nonsmokers
          System.out.println("The number of policies with a smoker is: " + numSmokers);
          System.out.println("The number of policies with a non-smoker is: " + numNonSmokers);

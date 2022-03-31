@@ -20,8 +20,19 @@ public class PolicyHolder
          weight = 0;
    }
    
+   //Copy Constructor
+   public PolicyHolder(PolicyHolder pHolder)
+   {
+      firstName = pHolder.firstName;
+      lastName = pHolder.lastName;
+      age = pHolder.age;
+      smokingStatus = pHolder.smokingStatus;
+      height = pHolder.height;
+      weight = pHolder.weight;
+   }
+   
    //Constructor that accepts arguments
-   public Policy(String fName, String lName, int a, String sStatus, double h, double w)
+   public PolicyHolder(String fName, String lName, int a, String sStatus, double h, double w)
    {
       //Set field values to the given argument values
          firstName = fName;
@@ -52,7 +63,7 @@ public class PolicyHolder
       double price = 600;
       if(age > 50)
       {
-         price += 50;
+         price += 75;
       }
       if(smokingStatus.equals("smoker"))
       {
@@ -71,16 +82,18 @@ public class PolicyHolder
       
       @return all fields in a string
    */
-   public override String toString()
+   public String toString()
    {
       String returnString = "";
-      returnString += "\nFirst Name = " + firstName;
-      returnString += "\nLast Name = " + lastName;
-      returnString += "\nAge = " + age;
-      returnString += "\nSmoking Status = " + smokingStatus;
-      returnString += "\nHeight = " + height;
-      returnString += "\nWeight = " + weight;
-      return returnString
+      returnString += "\nPolicyHolder's First Name: " + firstName;
+      returnString += "\nPolicyHolder's Last Name: " + lastName;
+      returnString += "\nPolicyHolder's Age: " + age;
+      returnString += "\nPolicyHolder's Smoking Status (Y/N): " + smokingStatus;
+      returnString += "\nPolicyHolder's Height: " + height;
+      returnString += "\nPolicyHolder's Weight: " + weight;
+      returnString += String.format("\nPolicyHolder's BMI: %,.2f", BMICalculator());
+      returnString += String.format("\nPolicy Price: $%,.2f\n", calculateInsurancePrice());
+      return returnString;
    }
    
    //All the Setter methods for each field
