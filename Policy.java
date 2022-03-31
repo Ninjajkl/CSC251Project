@@ -20,6 +20,19 @@ public class Policy
          providerName = pName;
    }
    
+   /**
+      Overrides the toString Method
+      
+      @return all fields in a string
+   */
+   public override String toString()
+   {
+      String returnString = "";
+      returnString += "\nPolicy Number = " + policyNumber;
+      returnString += "\nProvider name = " + providerName;
+      return returnString
+   }
+   
    //All the Setter methods for each field
    
    /**
